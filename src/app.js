@@ -4,11 +4,7 @@ var app = require('./api/index');
 var normalizePort = require('./utils/normalizePort');
 var onError = require('./utils/onError');
 
-/**
- * Module dependencies.
- */
-
-
+ 
 
 /**
  * Get port from environment and store in Express.

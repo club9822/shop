@@ -3,6 +3,8 @@ var Promise = require('bluebird');
 var jwtUtils = require('../passport/jwt');
 var { accessJWTOptions } = require('../config/jwt');
 var jwt = require('jsonwebtoken');
+
+var CRUDService = require('./CRUDService');
 var UserService = {
   /**
    *
@@ -122,23 +124,7 @@ var UserService = {
    * @constructor
    */
   GetAll: function(limit = null, offset = 0) {
-    return new Promise(function(resolve, reject) {
-      UserModel.findAll({
-        limit: limit,
-        offset: offset,
-      })
-        .then(function(users) {
-          resolve({
-            detail: '',
-            result: users,
-          });
-        })
-        .catch(function(e) {
-          resolve({
-            detail: e,
-          });
-        });
-    });
+    return CRUDService.read('User', limit, offset);
   },
   DeleteAll: function() {
     return new Promise(function(resolve, reject) {
