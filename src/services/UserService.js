@@ -10,7 +10,7 @@ var UserService = {
    * @param  {String} password
    * @constructor
    */
-  SignIn(username, password) {
+  SignIn: function(username, password) {
     return new Promise(function(resolve, reject) {
       UserService.FindUser(username, password)
         .then(function(user) {
@@ -47,7 +47,7 @@ var UserService = {
    * @constructor
    * @return {Object} user
    */
-  SignUp(user) {
+  SignUp: function(user) {
     const { username, password } = user;
     return new Promise(function(resolve, reject) {
       UserService.FindUser(username, password).then(function(userResponse) {
@@ -73,7 +73,7 @@ var UserService = {
    * @param {String} password
    * @constructor
    */
-  FindUser(username, password) {
+  FindUser: function(username, password) {
     return new Promise(function(resolve, reject) {
       UserModel.findOne({
         where: {
@@ -98,7 +98,7 @@ var UserService = {
    * @param {Object} updateFields
    * @constructor
    */
-  UpdateUser(username, password, updateFields) {
+  UpdateUser: function(username, password, updateFields) {
     return new Promise(function(resolve, reject) {
       UserService.FindUser(username, password).then(function(user) {
         UserModel.update(Object.assign(user, updateFields))
@@ -121,7 +121,7 @@ var UserService = {
    * @return {Bluebird<unknown>}
    * @constructor
    */
-  GetAll(limit = null, offset = 0) {
+  GetAll: function(limit = null, offset = 0) {
     return new Promise(function(resolve, reject) {
       UserModel.findAll({
         limit: limit,
@@ -140,7 +140,7 @@ var UserService = {
         });
     });
   },
-  DeleteAll() {
+  DeleteAll: function() {
     return new Promise(function(resolve, reject) {
       UserModel.sync({
         force: true,

@@ -1,6 +1,6 @@
 #  Project structure base on  
-**https://softwareontheroad.com/ideal-nodejs-project-structure/**
-
+**Implementation of a bulletproof node.js API 🛡️ https://softwareontheroad.com/ideal-n…**
+**https://github.com/santiq/bulletproof-nodejs/**
 
  # dependencies
     "agenda": "^2.3.0",
