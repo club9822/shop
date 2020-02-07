@@ -87,11 +87,8 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-#log
-logs
-
 #webstrom idea
 .idea
 
 public
-upload
+public/upload
